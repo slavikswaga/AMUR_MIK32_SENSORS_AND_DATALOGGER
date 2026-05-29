@@ -18,4 +18,3 @@ while True:
         if response:
             print(response)
     time.sleep(0.95)
-    

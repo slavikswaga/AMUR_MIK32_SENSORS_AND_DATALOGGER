@@ -22,11 +22,6 @@ byte ADDR_mcp3021 = 0x4B - 0x48;
 BH1750 lightMeter;
 LM75 lm75_sensor;
 
-uint32_t getAbsoluteHumidity(float temperature, float humidity) {
-  const float absoluteHumidity = 216.7f * ((humidity / 100.0f) * 6.112f * exp((17.62f * temperature) / (243.12f + temperature)) / (273.15f + temperature));  // [g/m^3]
-  const uint32_t absoluteHumidityScaled = static_cast<uint32_t>(1000.0f * absoluteHumidity);                                                                 // [mg/m^3]
-  return absoluteHumidityScaled;
-}
 const float air_value = 561.0;
 const float water_value = 293.0;
 const float moisture_0 = 0.0;
@@ -34,7 +29,7 @@ const float moisture_100 = 100.0;
 
 Adafruit_BME280 bme;
 Adafruit_Sensor *bme_temp = bme.getTemperatureSensor();
-Adafruit_Sensor *bme_pressure = bme.getPressureSensor();
+Adafruit_Sensor *bme_pressure = bme.getPressureSensor();  
 Adafruit_Sensor *bme_humidity = bme.getHumiditySensor();
 PCA9634 testModule(0x1C);
 
@@ -74,9 +69,6 @@ void setup() {
   if (!bme.begin()) {
     Serial.println(F("Sensor MGS-THP80 not found :("));
   }
-  bme_temp->printSensorDetails();
-  bme_pressure->printSensorDetails();
-  bme_humidity->printSensorDetails();
   //RGB3 init
   testModule.begin();
   for (int channel = 0; channel < testModule.channelCount(); channel++) {
@@ -85,7 +77,7 @@ void setup() {
 }
 int counter = 0;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 void loop() {
   for (int channel = 0; channel < testModule.channelCount(); channel++) {
     testModule.setLedDriverMode(channel, PCA9634_LEDPWM);  // установка режима ШИМ (0-255)
