@@ -7,7 +7,7 @@ from threading import Thread
 
 app = Flask(__name__)
 
-# Храним последние 100 значения
+# Храним последние 100 значений
 last_values = deque(maxlen=100)
 
 # Настройка Arduino
@@ -29,7 +29,6 @@ def serial_reader():
 
             while arduino.in_waiting:
                 response = arduino.readline().decode(errors="ignore").strip()
-
                 if response:
                     print(response)
                     last_values.append({
@@ -64,7 +63,6 @@ def index():
 <table border="1">
 <thead>
 <tr>
-<th>Время</th>
 <th>Данные</th>
 </tr>
 </thead>
@@ -85,7 +83,6 @@ async function updateData() {
     data.slice().reverse().forEach(item => {
         html += `
         <tr>
-            <td>${item.time}</td>
             <td>${item.value}</td>
         </tr>
         `;

@@ -1,7 +1,6 @@
 #include <SPI.h>
 #include <stdint.h>
 #include <Wire.h>
-#include <SPI.h>
 #include <Adafruit_BME280.h>
 #include <PCA9634.h>
 #include "mcp3021.h"
