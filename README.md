@@ -1,33 +1,33 @@
-An environmental monitoring system with support for logging parameters in non-volatile memory, displaying parameters on an LCD display, and displaying parameters in a graphical user interface.
+Система мониторинга окружающей среды с поддержкой логирования параметров в энергонезависимой памяти, вывода параметров на ЖК-дисплей и отображения параметров в графическом интерфейсе пользователя.
 
- The equipment used includes:
+Используемое оборудование:
 
-·  Elbear debugging board (AMUR MIK32);
+·  отладочная плата Elbear (АМУР МIK32);
 
-·  MGS-THP80 temperature, humidity, and atmospheric pressure sensor;
+·  датчик температуры, влажности воздуха и атмосферного давления MGS-THP80;
 
-·  LM75A temperature sensor;
+·  датчик температуры LM75A;
 
-·  MGS-WT1 water leakage sensor;
+·  датчик протечки воды MGS-WT1;
 
-· 6-axis gyroscope and accelerometer module MGS-A6;
+·  модуль 6-осевого гироскопа и акселерометра MGS-A6;
 
-· laser distance sensor MGS-D20;
+·  датчик расстояния лазерный MGS-D20;
 
-· sound sensor MGS-SND504;
+·  датчик звука MGS-SND504;
 
-· light sensor MGS-L75;
+·  датчик освещенности MGS-L75;
 
-· flame sensor MGS-FR403;
+·  датчик пламени MGS-FR403;
 
-· LED module MGL-RGB3;
+·  светодиодный модуль MGL-RGB3;
 
-· LCD1602A display;
+·  Дисплей LCD1602А;
 
-·  25LC640 memory chip.
+·  микросхема памяти 25LC640.
 
-On the Elbear development board, the SPI-I2C_Environmental_Scanner_DataLog.ino file is uploaded via the Arduino IDE, then you need to open the new_web.py file and select your Serial port there, after which you can run this file. Please note that you do not need to open the Serial Port in the Arduino IDE, as you can only open the port in one environment.
+На отладочную плату Elbear через Arduino IDE заливается файл SPI-I2C_Environmental_Scanner_DataLog.ino, далее нужно открыть файл new_web.py и выбрать там свой Serial port, после чего можно запускать этот файл. Обратите внимание, что в среде Arduino IDE не нужно открывать Serial Port, так как открыть порт можно только в одной среде.
 
-Demonstration of the programs, as well as additional materials (including the assembly diagram), can be viewed on Google Drive at the link - https://drive.google.com/drive/folders/157Avd4HwEQ3r8ijlx_A1WvOwD3bu2F1F?usp=drive_link
+Демонстрация работы программ, а также дополнительные материалы (в том числе и схему сборки) можно посмотреть на Google Диске по ссылке - https://drive.google.com/drive/folders/157Avd4HwEQ3r8ijlx_A1WvOwD3bu2F1F?usp=drive_link
 
-This project is educational, made by a student of the group 8B51T of Tomsk Polytechnic University.
+Данный проект является учебным, выполнен студентом группы 8В51Т Томского Политехнического Университета.
